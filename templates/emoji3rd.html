@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ page_title }}
+{% endblock %}
+
+{% block main %}
+<div class="d-flex justify-content-center">
+    <p class="emoji-header">{{ main_emoji }}</p>
+</div>
+who matches you the most now? <br/> (psst! hover for clues)
+
+<div id="loading-container" class="loading-container">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <img src="{{ url_for('static', filename='spin.gif') }}" alt="loading...">
+    </div>
+</div>
+
+<div id="form-container" class="d-flex justify-content-center align-items-center vh-100" style="margin-top: -10rem;">
+    <form>
+        {% for link in links %}
+            <a href="{{ url_for('storytime', label=link.label) }}"
+                class="emoji-link"
+                aria-label="{{ link.label }}"
+                title="{{ link.label }}"
+                onclick="showLoading()">
+                {{ link.emoji }}
+                <span class="emoji-label">{{ link.label }}</span>
+            </a>{% if loop.index % 3 == 0 %}<br/>{% endif %}
+        {% endfor %}
+    </form>
+</div>
+
+<div class="d-flex justify-content-center">
+    <a href="{{ negative_link }}" class="emoji-above-navbar">🙅</a>
+    <p class="words-above-navbar">none of them!</p>
+</div>
+
+{% block scripts %}
+<script>
+function showLoading() {
+    // Hide the form container
+    document.getElementById('form-container').style.display = 'none';
+
+    // Show the loading container
+    document.getElementById('loading-container').style.display = 'block';
+
+    // Simulate a delay (adjust this as needed)
+    setTimeout(function() {
+        // Submit the form after the delay (you might want to use actual form submission logic)
+        document.getElementById('emoji-form').submit();
+    }, 10);  // Simulated delay: 100 milliseconds
+}
+</script>
+{% endblock %}
+
+{% endblock %}

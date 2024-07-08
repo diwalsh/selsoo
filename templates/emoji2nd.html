@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ page_title }}
+{% endblock %}
+
+{% block main %}
+<div class="d-flex justify-content-center">
+    <p class="emoji-header">{{ main_emoji }}</p>
+</div>
+who matches you the most now?
+
+<div class="d-flex justify-content-center align-items-center vh-100" style="margin-top: -10rem;">
+    <form class="emoji-links">
+        {% for link in links %}
+            <a href="{{ link.href }}" class="emoji-link" aria-label="{{ link.label }}">{{ link.emoji }}</a>
+        {% endfor %}
+    </form>
+</div>
+
+<div class="d-flex justify-content-center">
+    <a href="/negative" class="emoji-above-navbar">🙅</a>
+    <p class="words-above-navbar">none of them!</p>
+</div>
+
+{% endblock %}

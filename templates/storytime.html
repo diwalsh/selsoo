@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    storytime
+{% endblock %}
+
+{% block main %}
+<div id="loading-container" class="loading-container">
+    <div class="loading-spinner"></div>
+    <p class="loading-message">Generating your story...</p>
+</div>
+
+<h2>{{ title }}</h2>
+<div class="container">
+    <div class="story-container">
+        <p>{{ generated_story|safe }}</p>
+    </div>
+    <div class="image-container">
+        {% if "/archive/" in generated_object %}
+            <img src="{{ generated_object.replace('/archive/', '/') }}" alt="Generated 3D Object">
+        {% else %}
+            <img src="{{ generated_object }}" alt="Generated 3D Object">
+        {% endif %}
+    </div>
+</div>
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Show loading container
+    document.getElementById('loading-container').style.display = 'flex';
+
+    // Hide loading container once content is loaded
+    window.addEventListener('load', function() {
+        document.getElementById('loading-container').style.display = 'none';
+    });
+});
+</script>
+{% endblock %}
+
+{% endblock %}

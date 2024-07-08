@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    sick
+{% endblock %}
+
+{% block main %}
+<div class="d-flex justify-content-center">
+    <p class="emoji-header">🤕</p>
+</div>
+who matches you the most now?
+
+<div class="d-flex justify-content-center align-items-center vh-100" style="margin-top: -10rem;">
+    <form>
+            <a href="sick1" class="emoji-link-sick" aria-label="sick1">🤕(🚨/🩻)</a>
+            <a href="sick2" class="emoji-link-sick" aria-label="sick2">🤒(🦠/🧫)</a>
+            <a href="sick3" class="emoji-link-sick" aria-label="sick3">🥴(🫄/🍼)</a>
+            <br/>
+            <a href="sick4" class="emoji-link-sick" aria-label="sick4">🥴(🥃/💊)</a>
+            <a href="sick5" class="emoji-link-sick" aria-label="sick5">🤧(🌾/🐾)</a>
+            <a href="sick6" class="emoji-link-sick" aria-label="sick6">🤕(🦼/🧬)</a>
+            <br/>
+            <a href="sick7" class="emoji-link-sick" aria-label="sick7">😷(🌋/🚛💨🏭)</a>
+    </form>
+</div>
+
+<div class="d-flex justify-content-center">
+    <a href="/negative" class="emoji-above-navbar">🙅</a>
+    <p class="words-above-navbar">none of them!</p>
+</div>
+
+{% endblock %}

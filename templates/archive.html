@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Archive
+{% endblock %}
+
+{% block main %}
+    <h2>selsoo archive</h2>
+    {% if stories %}
+        <div class="card-container" style="margin: 6%;">
+            {% for story in stories %}
+                <div class="card">
+                    <a href="{{ url_for('view_story', story_id=story.id) }}">
+                        <img src="{{ story.illustration_path }}" alt="Illustration">
+                        <div class="card-content">
+                            <strong>{{ story.title }}</strong>
+                            <p class="content" style="margin: 4%;">{{ story.content[:200] }}...</p>
+                        </div>
+                            <p class="footer">i was feeling {{ story.emotion }} on <br> {{ story.created_at }}</p>
+
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="d-flex justify-content-center align-items-center vh-100" style="margin-top: -8rem;">
+            <p>no stories in the archive yet!<br>
+            <a href="/" class="body-link">ready for the first self soothing session?</a></p>
+        </div>
+    {% endif %}
+
+{% endblock %}

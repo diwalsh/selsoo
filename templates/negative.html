@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    check-in
+{% endblock %}
+
+{% block main %}
+<div class="d-flex justify-content-center">
+    <p class="emoji-header">
+        👎
+    </p>
+</div>
+who matches you the most right now?
+
+<div class="d-flex justify-content-center align-items-center vh-100" style="margin-top: -10rem;">
+    <form>
+        <a href="/sad" class="emoji-link" aria-label="sad">☹️</a>
+        <a href="/angry" class="emoji-link" aria-label="angry">😠</a>
+        <a href="/sick" class="emoji-link" aria-label="sick">🤕</a>
+        <a href="/apathetic" class="emoji-link" aria-label="apathetic">😐</a>
+        <br/>
+        <a href="/anxious" class="emoji-link" aria-label="anxious">😬</a>
+        <a href="/uncomfortable" class="emoji-link" aria-label="uncomfortable">😣</a>
+        <a href="/shocked" class="emoji-link" aria-label="shocked">😳</a>
+        <a href="/tired" class="emoji-link" aria-label="tired">😮‍💨</a>
+    </form>
+</div>
+
+
+{% endblock %}
