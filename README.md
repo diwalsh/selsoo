@@ -4,7 +4,7 @@
 [Selsoo on YouTube](https://www.youtube.com/watch?v%253D-FOJuNiV3Lk)
 
 ### Description
-Selsoo is a web application I designed and developed as the final project for CS50x. This Flask application leverages Python, HTML, CSS, JavaScript, SQLite3, and API connections.
+Selsoo is a web application I designed and developed as the final project for CS50x. It is my very first application! This Flask app leverages Python, HTML, CSS, JavaScript, SQLite3, and API connections.
 
 ### Features
 
